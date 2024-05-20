@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TreinoAmistoso;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -38,7 +39,7 @@ class controllerTreinoAmistoso extends Controller
         $dados->responsavel = $request->input('responsavel');
         $dados->observacao = $request->input('observacao');
         $dados->save();
-        return redirect('/treino_amistosos')->with('success', 'Novo Treino Cadastrado!');
+        return redirect()->route('inicio')->with('success', 'Novo Treino Cadastrado!');
     }
 
     /**

@@ -26,6 +26,10 @@ div.cabecalho {
     align-items: center;
 }
 
+a.titulo {
+    text-decoration: none;
+}
+
 h1.educacao {
     padding-left: 30px;
     color: var(--yellow);
@@ -53,6 +57,7 @@ h1.fisica {
 /*Parte das opções*/
 
 div.opcoes {
+    cursor: pointer;
     height: 5rem;
     background-color: var(--yellow);
     border-top: 4px solid black;
@@ -65,6 +70,7 @@ div.opcoes {
 }
 
 h2.opcoes {
+    cursor: pointer;
     padding-left: 20px;
     font-size: 2rem;
     font-family: "Inter", sans-serif;

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TreinoAmistoso extends Model
 {
     use HasFactory;
+    protected $table = 'treino_amistosos';
     protected $fillable = ['dia', 'horario', 'genero', 'publico', 'local', 'responsavel', 'observacao'];
 
     public function Chekin()

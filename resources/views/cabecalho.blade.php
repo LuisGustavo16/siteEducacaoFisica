@@ -7,8 +7,8 @@
 </head>
 <body class="padrao">
     <div class="cabecalho">
-        <h1 class="educacao">EDUCAÇÃO</h1>
-        <h1 class="fisica">FÍSICA</h1>
+        <a class="titulo" href="{{route("inicio")}}"><h1 class="educacao">EDUCAÇÃO</h1></a>
+        <a class="titulo" href="{{route("inicio")}}"><h1 class="fisica">FÍSICA</h1></a>
     </div>
 
     <div class="opcoes">
@@ -21,7 +21,7 @@
 
             <div class="subopcoes um">
                 <div class="laranja"></div>
-                <h3>Cadastrar novo treino ou amistoso</h3>
+                <a href="{{route("treino")}}"><h3>Cadastrar novo treino ou amistoso</h3></a>
                 <h3>Ver treinos e amistosos</h3>
                 <h3>Cronograma</h3>
             </div>
