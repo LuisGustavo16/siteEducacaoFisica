@@ -1,3 +1,2 @@
-import './bootstrap';
-import '../sass/app.scss';
-import '../css/cabecalho.css'
+import '../css/cabecalho.css';
+import '../scss/app.scss';
