@@ -8,27 +8,39 @@ use Illuminate\Http\Request;
 
 class controllerTreinoAmistoso extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+    /*Envia todos os dados para serem listados*/
+    public function index() {
+        $dados = TreinoAmistoso::all();
+        return view('TreinosAmistosos/listarTreinos', compact('dados'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    /*Ao clicar em um treino, os dados dele serão enviados*/
+    public function enviaDadoEscolhido(string $idTreino) {
+        $dados = TreinoAmistoso::find($idTreino);
+        if (isset($dados))
+            return view('TreinosAmistosos/listarTreinoEscolhido', compact('dados'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
+    /*Recebe o id de um dado para ser editado e posteriormente edita ele*/
+    public function update (string $idTreino, Request $request) {
+        $dados = TreinoAmistoso::find($idTreino);
+        if (isset($dados)) {
+            $dados->idModalidade = $request->input('idModalidade');
+            $dados->dia = $request->input('dia');
+            $dados->horario = $request->input('horario');
+            $dados->genero = $request->input('genero');
+            $dados->publico = $request->input('publico');
+            $dados->local = $request->input('local');
+            $dados->responsavel = $request->input('responsavel');
+            $dados->observacao = $request->input('observacao');
+            $dados->save();
+            return redirect('inicio');
+        }
+        return redirect('inicio');
+    }
+
+    /*Cadastra um novo dado na tabela*/
+    public function store(Request $request) {
         $dados = new TreinoAmistoso();
         $dados->idModalidade = $request->input('idModalidade');
         $dados->dia = $request->input('dia');
@@ -39,38 +51,22 @@ class controllerTreinoAmistoso extends Controller
         $dados->responsavel = $request->input('responsavel');
         $dados->observacao = $request->input('observacao');
         $dados->save();
-        return redirect()->route('inicio')->with('success', 'Novo Treino Cadastrado!');
+        return redirect()->route('inicio');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+    /*Apaga um dado da tabela*/
+    public function destroy(string $id) {
+        $dados = TreinoAmistoso::find($id);
+        if (isset($dados)) {
+            $dados->delete();
+            return redirect()->route('inicio');
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+    /*Envia os dados para serem editados*/
+    public function edit(string $idTreino) {
+        $dados = TreinoAmistoso::find($idTreino);
+        if (isset($dados))
+            return view('TreinosAmistosos/editarTreino', compact('dados'));
     }
 }

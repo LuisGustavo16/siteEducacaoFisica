@@ -28,6 +28,7 @@ div.cabecalho {
 
 a.titulo {
     text-decoration: none;
+    color: black;
 }
 
 h1.educacao {

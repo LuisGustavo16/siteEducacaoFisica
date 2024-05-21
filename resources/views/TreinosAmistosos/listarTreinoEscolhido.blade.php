@@ -1,0 +1,33 @@
+@extends ('cabecalho')
+@section('content')
+    <div class="fundo">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Modalidade</th>
+                <th>Dia</th>
+                <th>Horário</th>
+                <th>Gênero</th>
+                <th>Publico</th>
+                <th>Local</th>
+                <th>Responsável</th>
+                <th>Observação</th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr>
+                    <td>{{$dados->idTreino}}</td>
+                    <td>{{$dados->idModalidade}}</td>
+                    <td>{{$dados->dia}}</td>
+                    <td>{{$dados->horario}}</td>
+                    <td>{{$dados->genero}}</td>
+                    <td>{{$dados->publico}}</td>
+                    <td>{{$dados->local}}</td>
+                    <td>{{$dados->responsavel}}</td>
+                    <td>{{$dados->observacao}}</td>
+                </tr>
+        </tbody>
+    </table>
+    </div>
+@endsection

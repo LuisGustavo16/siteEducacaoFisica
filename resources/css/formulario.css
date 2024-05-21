@@ -1,8 +1,109 @@
+:root {
+    /*Cores do Site*/
+    --white: #E6E8F4;
+    --blue: #00198E;
+    --yellow: #FFDF2B;
+    --orange: #FFC24B;
+}
+
+.fundo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 form {
     border-radius: 2rem;
     box-shadow: 0.1rem 0.1rem 1rem black;
     margin: 5rem;
+    margin-top: 3rem;
     padding: 3rem;
+    padding-top: 0;
     background-color: white;
     border: 3px solid black;
+    display: flex;
+    height: 25rem;
+    width: 70rem;
+}
+
+div.coluna {
+    width: 20rem;
+    row-gap: 5rem;
+}
+
+.campo {
+    padding-top: 3rem;
+}
+
+label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: "Inter", sans-serif;
+    text-decoration: dashed;
+}
+
+input {
+    padding-left: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    height: 1.4rem;
+    width: 14rem;
+    font-family: "Inter", sans-serif;
+}
+
+select {
+    padding-left: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    height: 1.8rem;
+    width: 10rem;
+    font-family: "Inter", sans-serif;
+}
+
+option {
+    padding-left: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-left: 1rem;
+    border-radius: 1rem;
+    height: 1.4rem;
+    width: 10rem;
+    font-family: "Inter", sans-serif;
+}
+
+.dia {
+    width: 13rem;
+}
+
+.horario {
+    width: 8rem;
+}
+
+.observacao {
+    height: 10rem;
+    width: 25rem;
+}
+
+button.botao {
+    position:relative;
+    height: 2rem;
+    width: 10rem;
+    border-radius: 2rem;
+    background-color: var(--blue);
+    color: white;
+    font-size: 1.2rem;
+    font-family: "Inter", sans-serif;
+    border: 0;
+    cursor: pointer;
+    bottom: -24rem;
+    margin-left: 5rem;
+}
+
+button.botao:hover {
+    box-shadow: 0.1rem 0.1rem 1rem black;
+    font-weight: 700;
 }
