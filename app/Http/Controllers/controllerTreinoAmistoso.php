@@ -34,9 +34,9 @@ class controllerTreinoAmistoso extends Controller
             $dados->responsavel = $request->input('responsavel');
             $dados->observacao = $request->input('observacao');
             $dados->save();
-            return redirect('inicio');
+            return redirect()->route('inicio');
         }
-        return redirect('inicio');
+        return redirect()->route('inicio');
     }
 
     /*Cadastra um novo dado na tabela*/

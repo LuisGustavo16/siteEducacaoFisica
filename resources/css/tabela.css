@@ -1,7 +1,59 @@
+:root {
+    /*Cores do Site*/
+    --white: #E6E8F4;
+    --blue: #00198E;
+    --yellow: #FFDF2B;
+    --orange: #FFC24B;
+    --yellowSecondary: #FFF1A8;
+}
+
 table {
-    padding: 2rem;
+    border-collapse: collapse;
     margin-top: 3rem;
     height: 10rem;
-    width: 70rem;
+    width: 50rem;
     background-color: white;
+    border: 1px solid black;
+    margin-bottom:3rem;
+}
+
+caption {
+    background-color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--blue);
+    text-shadow: 0.1rem 0.1rem 0rem black;
+    word-spacing: 0.5rem;
+    border: 1px solid black;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+thead {
+    height: 4rem;
+}
+
+th {
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    padding: 0.5rem;
+}
+
+td {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.amarelo {
+    background-color: var(--yellowSecondary);
+    padding: 0.5rem;
+}
+
+.branco {
+    padding: 0.5rem;
 }

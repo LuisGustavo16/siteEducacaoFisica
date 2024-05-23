@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('publico');
             $table->string('local');
             $table->string('responsavel');
-            $table->string('observacao');
+            $table->string('observacao')->nullable();
             $table->timestamps();
         });
 

@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Modalidade extends Model
 {
     use HasFactory;
+    protected $table = 'modalidades';
+    protected $primaryKey = 'idModalidade';
     protected $fillable = ['nome'];
 
     public function Time()

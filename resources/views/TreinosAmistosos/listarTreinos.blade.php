@@ -1,27 +1,45 @@
+<?php
+    $aux = false;
+    $classe = 'branco';
+?>
 @extends ('cabecalho')
 @section('content')
-    <div class="fundo">
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Modalidade</th>
-                    <th>Dia</th>
-                    <th>Mais</th>
+<div class="fundo">
+    <table>
+        <caption>TREINOS & AMISTOSOS</caption>
+        <thead>
+            <tr class="amarelo">
+                <th>ID</th>
+                <th>Modalidade</th>
+                <th>Dia</th>
+                <th>Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($dados as $item)
+                <?php 
+                    if ($aux == true) {
+                        $classe = 'amarelo';
+                        $aux = false;
+                    } elseif ($aux == false) {
+                        $classe = 'branco';
+                        $aux = true;
+                    }
+                ?>
+                <tr class="{{$classe}}">
+                    <td>{{$item->idTreino}}</td>
+                    <td>{{$item->idModalidade}}</td>
+                    <td>{{$item->dia}}</td>
+                    <td>
+                        <a href="treino_amistosos/selecionado/{{$item->idTreino}}">Ver</a>
+                        <a href="treino_amistosos/editar/{{$item->idTreino}}">Editar</a>
+                        <a href="treino_amistosos/apagar/{{$item->idTreino}}"
+                            onclick="return confirm('Deseja apagar o treino do dia {{$item->dia}} ?')">Excluir</a>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                @foreach ($dados as $item)
-                        <tr>
-                            <td>{{$item->idTreino}}</td>
-                            <th>{{$item->idModalidade}}</th>
-                            <th>{{$item->dia}}</th>
-                            <th><a href="treino_amistosos/selecionado/{{$item->idTreino}}">Ver</a></th>
-                            <th><a href="treino_amistosos/editar/{{$item->idTreino}}">Editar</a></th>
-                            <th><a href="treino_amistosos/apagar/{{$item->idTreino}}" onclick="return confirm('Deseja apagar este treino/amistoso ?')">Excluir</a></th>
-                        </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+               
+            @endforeach
+        </tbody>
+    </table>
+</div>
 @endsection

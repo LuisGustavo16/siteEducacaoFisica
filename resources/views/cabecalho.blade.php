@@ -40,7 +40,8 @@
 
             <div class="subopcoes quatro">
                 <div class="laranja"></div>
-                <h3>Configurar modalidades</h3>
+                <a class="titulo" href="{{route("novaModalidade")}}"><h3>Cadastrar modalidade</h3></a>
+                <a class="titulo" href="{{route("indexModalidade")}}"><h3>Ver modalidades</h3></a>
             </div>
             
         </div>
