@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\TreinoAmistoso;
+use App\Models\Modalidade;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -11,14 +12,16 @@ class controllerTreinoAmistoso extends Controller
     /*Envia todos os dados para serem listados*/
     public function index() {
         $dados = TreinoAmistoso::all();
-        return view('TreinosAmistosos/listarTreinos', compact('dados'));
+        $modalidades = Modalidade::all();
+        return view('TreinosAmistosos/listarTreinos', compact('dados', 'modalidades'));
     }
 
     /*Ao clicar em um treino, os dados dele serão enviados*/
-    public function enviaDadoEscolhido(string $idTreino) {
+    public function enviaTreinoEscolhido(string $idTreino, string $idModalidade) {
         $dados = TreinoAmistoso::find($idTreino);
+        $modalidade = Modalidade::find($idModalidade);
         if (isset($dados))
-            return view('TreinosAmistosos/listarTreinoEscolhido', compact('dados'));
+            return view('TreinosAmistosos/listarTreinoEscolhido', compact('dados', 'modalidade'));
     }
 
     /*Recebe o id de um dado para ser editado e posteriormente edita ele*/
@@ -59,7 +62,7 @@ class controllerTreinoAmistoso extends Controller
         $dados = TreinoAmistoso::find($id);
         if (isset($dados)) {
             $dados->delete();
-            return redirect()->route('inicio');
+            return redirect()->route('indexTreino');
         }
     }
 
@@ -68,5 +71,10 @@ class controllerTreinoAmistoso extends Controller
         $dados = TreinoAmistoso::find($idTreino);
         if (isset($dados))
             return view('TreinosAmistosos/editarTreino', compact('dados'));
+    }
+
+    public function enviaModalidade() {
+        $modalidades = Modalidade::all();
+        return view('Treinosamistosos/cadastrarTreino', compact('modalidades'));
     }
 }

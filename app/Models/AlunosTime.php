@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AlunosTime extends Model
 {
     use HasFactory;
-    
+    protected $primaryKey = 'idAlunosTimes';
     public function Aluno()
     {
         #A tabela 'AlunosTimes' recebe o idAluno para poder fazer a relação

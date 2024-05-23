@@ -7,9 +7,10 @@
 }
 
 .fundo {
-    display: flex;
+    display:flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
 }
 
 form {
@@ -103,7 +104,20 @@ button.botao {
     margin-left: 5rem;
 }
 
+.formModalidade form {
+    width: 30rem;
+    height: 15rem;
+}
+
+.formModalidade form button.botao{
+    bottom: -14rem;
+}
+
 button.botao:hover {
     box-shadow: 0.1rem 0.1rem 1rem black;
     font-weight: 700;
+}
+
+.modalidade {
+    width: 14rem;
 }

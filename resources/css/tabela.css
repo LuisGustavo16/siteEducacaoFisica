@@ -11,7 +11,7 @@ table {
     border-collapse: collapse;
     margin-top: 3rem;
     height: 10rem;
-    width: 50rem;
+    width: 55rem;
     background-color: white;
     border: 1px solid black;
     margin-bottom:3rem;
@@ -45,7 +45,8 @@ td {
     padding-top: 30px;
     padding-bottom: 30px;
     font-family: "Inter", sans-serif;
-    text-align: center;
+    text-align: left;
+    padding-left: 30px;
     font-size: 1.6rem;
 }
 
@@ -56,4 +57,20 @@ td {
 
 .branco {
     padding: 0.5rem;
+}
+
+.addAlunoDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.escolhido th {
+    font-size: 1.7rem;
+    padding-right: 30px;
+}
+
+.escolhido td {
+    font-size: 1.4rem;
+    padding-right: 30px;
 }

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Time extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'idTime';
     protected $fillable = ['genero', 'competicao'];
 
     public function AlunosTime()

@@ -6,11 +6,11 @@
 @section('content')
 <div class="fundo">
     <table>
-        <caption>TREINOS & AMISTOSOS</caption>
+        <caption>TIMES</caption>
         <thead>
             <tr class="amarelo">
                 <th>Modalidade</th>
-                <th>Dia</th>
+                <th>Competição</th>
                 <th>Opções</th>
             </tr>
         </thead>
@@ -26,18 +26,14 @@
                     }
                 ?>
                 <tr class="{{$classe}}">
-                    @foreach ($modalidades as $modalidade)
-                        @if ($modalidade->idModalidade == $item->idModalidade)
-                            <td>{{$modalidade->nome}} {{$item->genero}}</td>
-                    <td>{{$item->dia}}</td>
+                    <td>{{$item->idModalidade}}</td>
+                    <td>{{$item->competicao}}</td>
                     <td>
-                        <a href="../treino_amistosos/selecionado/{{$item->idTreino}}/{{$modalidade->idModalidade}}">Ver</a>
-                        <a href="treino_amistosos/editar/{{$item->idTreino}}">Editar</a>
-                        <a href="treino_amistosos/apagar/{{$item->idTreino}}"
-                            onclick="return confirm('Deseja apagar o treino do dia {{$item->dia}} ?')">Excluir</a>
+                        <a href="times/selecionado/{{$item->idTime}}">Ver</a>
+                        <a href="times/editar/{{$item->idTime}}">Editar</a>
+                        <a href="times/apagar/{{$item->idTime}}"
+                            onclick="return confirm('Deseja apagar o time do {{$item->competicao}} ?')">Excluir</a>
                     </td>
-                    @endif
-                    @endforeach
                 </tr>
                
             @endforeach

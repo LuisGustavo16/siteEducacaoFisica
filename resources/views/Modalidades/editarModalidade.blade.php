@@ -1,6 +1,6 @@
 @extends ('cabecalho')
 @section('content')
-    <div class="fundo">
+    <div class="fundo formModalidade">
         <form action="/modalidades/atualizar/{{$dados->idModalidade}}" method="POST">
             @csrf
             <div class="coluna">

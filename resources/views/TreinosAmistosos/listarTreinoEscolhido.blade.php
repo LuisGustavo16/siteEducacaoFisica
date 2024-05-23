@@ -3,8 +3,7 @@
     <div class="fundo">
     <table>
         <thead>
-            <tr>
-                <th>ID</th>
+            <tr class="amarelo escolhido">
                 <th>Modalidade</th>
                 <th>Dia</th>
                 <th>Horário</th>
@@ -16,9 +15,8 @@
             </tr>
         </thead>
         <tbody>
-                <tr>
-                    <td>{{$dados->idTreino}}</td>
-                    <td>{{$dados->idModalidade}}</td>
+                <tr class="escolhido">
+                    <td>{{$modalidade->nome}}</td>
                     <td>{{$dados->dia}}</td>
                     <td>{{$dados->horario}}</td>
                     <td>{{$dados->genero}}</td>

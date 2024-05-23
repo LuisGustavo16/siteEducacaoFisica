@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Aluno extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'idAluno';
     protected $fillable = ['CPF', 'nome', 'dtNascimento', 'matricula', 'RG', 'turma', 'curso'];
 
     public function Chekin()

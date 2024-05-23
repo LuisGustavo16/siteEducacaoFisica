@@ -21,20 +21,21 @@
 
             <div class="subopcoes um">
                 <div class="laranja"></div>
-                <a class="titulo" href="{{route("novoTreino")}}"><h3>Cadastrar novo treino ou amistoso</h3></a>
+                <a class="titulo" href="{{route("enviaModalidadesCadastro")}}"><h3>Cadastrar novo treino ou amistoso</h3></a>
                 <a class="titulo" href="{{route("indexTreino")}}"><h3>Ver treinos e amistosos</h3></a>
                 <h3>Cronograma</h3>
             </div>
 
             <div class="subopcoes dois">
                 <div class="laranja"></div>
-                <h3>Ver reservas</h3>
+                <a class="titulo" href="{{route("indexReserva")}}"><h3>Ver reservas</h3></a>
                 <h3>Solicitações de reservas</h3>
             </div>
 
             <div class="subopcoes tres">
                 <div class="laranja"></div>
-                <h3>Configurar times</h3>
+                <a class="titulo" href="{{route("novoTime")}}"><h3>Cadastrar novo time</h3></a>
+                <a class="titulo" href="{{route("indexTime")}}"><h3>Ver times</h3></a>
                 <h3>Jogos</h3>
             </div>
 

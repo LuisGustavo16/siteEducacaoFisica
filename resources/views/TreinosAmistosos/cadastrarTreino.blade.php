@@ -5,8 +5,12 @@
             @csrf
             <div class="coluna">
                 <div class="campo">
-                    <label for="idModalidade">*Modalidade:</label><br>
-                    <input type="text" name="idModalidade">
+                <label for="modalidade">*Modalidade:</label><br>
+                    <select class="modalidade" type="checkbox" name="idModalidade">
+                        @foreach ($modalidades as $modalidade)
+                            <option value="{{$modalidade->idModalidade}}">{{$modalidade->nome}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 
                 <div class="campo">

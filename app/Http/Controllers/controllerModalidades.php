@@ -38,7 +38,7 @@ class controllerModalidades extends Controller
         $dados = Modalidade::find($idModalidade);
         if (isset($dados)) {
             $dados->delete();
-            return redirect()->route('inicio');
+            return redirect()->route('indexModalidade');
         }
     }
 
