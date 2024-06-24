@@ -60,7 +60,7 @@ Route::get('/treino_amistosos/selecionado/{idTreino}/{idModalidade}', [App\Http\
 Route::post('/treino_amistosos/atualizar/{idTreino}', [App\Http\Controllers\controllerTreinoAmistoso::class, 'update']); // Rota para editar
 Route::get('/treino_amistosos/editar/{idTreino}', [App\Http\Controllers\controllerTreinoAmistoso::class, 'edit']); // Rota que manda o dado a ser editado para o formulário
 Route::get('/treino_amistosos/apagar/{idTreino}', [App\Http\Controllers\controllerTreinoAmistoso::class, 'destroy']); // Rota para apagar
-Route::get ('/treino_amistosos', [App\Http\Controllers\controllerTreinoAmistoso::class, 'enviaModalidade']) ->name('enviaModalidadesCadastro'); // Rota para exibir
+Route::get ('/treino_amistosos', [App\Http\Controllers\controllerTreinoAmistoso::class, 'enviaModalidade'])->name('enviaModalidadesCadastro'); // Rota que envia as modalidades para usar de opcao
 
 ////////////////////////////////////////////////
 /*Rotas do controller da tabela de Modalidades*/
@@ -79,11 +79,12 @@ Route::get ('/reservas', [App\Http\Controllers\controllerReservas::class, 'index
 ////////////////////////////////////////////////
 /*Rotas do controller da tabela de Times*/
 ////////////////////////////////////////////////
-Route::get ('/times', [App\Http\Controllers\controllerTimes::class, 'index']) ->name('indexTime'); // Rota para exibir
-Route::post('/times', [App\Http\Controllers\controllerTimes::class, 'store'])->name('cadastrarTime'); // Rota para cadastrar
-Route::get('/times/selecionado/{idTreino}', [App\Http\Controllers\controllerTimes::class, 'enviaTimeEscolhido']); // Rota que envia o dado para ser vizualizado
+Route::get ('/times/listarTimes', [App\Http\Controllers\controllerTimes::class, 'index']) ->name('indexTime'); // Rota para exibir
+Route::post('/times/cadastrarTimes', [App\Http\Controllers\controllerTimes::class, 'store'])->name('cadastrarTime'); // Rota para cadastrar
+Route::get('/times/selecionado/{idTreino}/{idModalidade}', [App\Http\Controllers\controllerTimes::class, 'enviaTimeEscolhido']); // Rota que envia o dado para ser vizualizado
 Route::post('/times/atualizar/{idTime}', [App\Http\Controllers\controllerTimes::class, 'update']); // Rota para editar
 Route::get('/times/editar/{idTime}', [App\Http\Controllers\controllerTimes::class, 'edit']); // Rota que manda o dado a ser editado para o formulário
 Route::get('/times/apagar/{idTime}', [App\Http\Controllers\controllerTimes::class, 'destroy']); // Rota para apagar
 Route::get('/times/retirarAluno/{idAluno}/{idTime}', [App\Http\Controllers\controllerTimes::class, 'deleteAlunoTime']);
+Route::get ('/times/enviaModalidades', [App\Http\Controllers\controllerTimes::class, 'enviaModalidade'])->name('enviaModalidadeTimes'); // Rota que envia as modalidades para usar de opcao
 

@@ -34,7 +34,7 @@
 
             <div class="subopcoes tres">
                 <div class="laranja"></div>
-                <a class="titulo" href="{{route("novoTime")}}"><h3>Cadastrar novo time</h3></a>
+                <a class="titulo" href="{{route("enviaModalidadeTimes")}}"><h3>Cadastrar novo time</h3></a>
                 <a class="titulo" href="{{route("indexTime")}}"><h3>Ver times</h3></a>
                 <h3>Jogos</h3>
             </div>

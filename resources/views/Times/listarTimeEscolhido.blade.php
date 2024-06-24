@@ -16,14 +16,14 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{$dados->idModalidade}}</td>
+                    <td>{{$modalidade->nome}}</td>
                     <td>{{$dados->genero}}</td>
                     <td>{{$dados->competicao}}</td>
                 </tr>
             </tbody>
         </table>
 
-        <div class="addAlunoDiv">
+        <div class="centralizarDiv">
             <a href="">
                 <h1>ADICIONAR ALUNO AO TIME</h1>
             </a>

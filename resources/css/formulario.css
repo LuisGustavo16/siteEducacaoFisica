@@ -6,6 +6,7 @@
     --orange: #FFC24B;
 }
 
+/*AJUSTES GERAIS*/
 .fundo {
     display:flex;
     align-items: center;
@@ -76,8 +77,13 @@ option {
     font-family: "Inter", sans-serif;
 }
 
+/*INPUT*/
 .dia {
     width: 13rem;
+}
+
+.modalidade {
+    width: 14rem;
 }
 
 .horario {
@@ -89,6 +95,7 @@ option {
     width: 25rem;
 }
 
+/*BOTÃO*/
 button.botao {
     position:relative;
     height: 2rem;
@@ -104,11 +111,6 @@ button.botao {
     margin-left: 5rem;
 }
 
-.formModalidade form {
-    width: 30rem;
-    height: 15rem;
-}
-
 .formModalidade form button.botao{
     bottom: -14rem;
 }
@@ -118,6 +120,17 @@ button.botao:hover {
     font-weight: 700;
 }
 
-.modalidade {
-    width: 14rem;
+/*AJUSTES ESPECIFICOS*/
+.formModalidade form {
+    width: 30rem;
+    height: 15rem;
+}
+
+.cadastrarTime {
+    height: 15rem;
+    width: 45rem;
+}
+
+.cadastrarTime .competicao {
+    padding-left: 20%;
 }

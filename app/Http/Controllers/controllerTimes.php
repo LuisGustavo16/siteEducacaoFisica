@@ -7,22 +7,25 @@ use Illuminate\Http\Request;
 use App\Models\Time;
 use App\Models\AlunosTime;
 use App\Models\Aluno;
+use App\Models\Modalidade;
 
 class controllerTimes extends Controller
 {
     /*Envia todos os dados para serem listados*/
     public function index() {
         $dados = Time::all();
-        return view('Times/listarTimes', compact('dados'));
+        $modalidades = Modalidade::all();
+        return view('Times/listarTimes', compact('dados', 'modalidades'));
     }
 
     /*Ao clicar em um treino, os dados dele serão enviados*/
-    public function enviaTimeEscolhido(string $idTime) {
+    public function enviaTimeEscolhido(string $idTime, string $idModalidade) {
         $dados = Time::find($idTime);
         $alunosTimes = AlunosTime::all();
         $alunos = Aluno::all();
+        $modalidade = Modalidade::find($idModalidade);
         if (isset($dados))
-            return view('Times/listarTimeEscolhido', compact('dados', 'alunosTimes', 'alunos'));
+            return view('Times/listarTimeEscolhido', compact('dados', 'modalidade', 'alunosTimes', 'alunos'));
     }
 
     /*Recebe o id de um dado para ser editado e posteriormente edita ele*/
@@ -70,5 +73,10 @@ class controllerTimes extends Controller
             $alunoTime->delete();
             return redirect()->route('indexTime');
         }
+    }
+
+    public function enviaModalidade() {
+        $modalidades = Modalidade::all();
+        return view('Times/cadastrarTime', compact('modalidades'));
     }
 }

@@ -36,9 +36,10 @@ thead {
 
 th {
     font-family: "Inter", sans-serif;
-    text-align: center;
+    text-align: left;
     font-size: 2rem;
     padding: 0.5rem;
+    padding-left: 3rem;
 }
 
 td {
@@ -59,7 +60,7 @@ td {
     padding: 0.5rem;
 }
 
-.addAlunoDiv {
+.centralizarDiv {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,4 +74,8 @@ td {
 .escolhido td {
     font-size: 1.4rem;
     padding-right: 30px;
+}
+
+.listarTreinos {
+    width: 65rem;
 }

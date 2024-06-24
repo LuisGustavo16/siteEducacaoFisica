@@ -5,11 +5,6 @@
             @csrf
             <div class="coluna">
                 <div class="campo">
-                    <label for="idModalidade">ID da Modalidade:</label> <br>
-                    <input type="text" name="idModalidade" value="{{$dados->idModalidade}}">
-                </div>
-                
-                <div class="campo">
                     <label for="dia">Dia:</label> <br>
                     <input class="dia" type="date" name="dia" value="{{$dados->dia}}">
                 </div>
@@ -19,7 +14,10 @@
                     <input class="horario" type="time" name="horario" value="{{$dados->horario}}">
                 </div>
                 
-
+                <div class="campo">
+                    <label for="responsavel">Responsável:</label> <br>
+                    <input type="text" name="responsavel" value="{{$dados->responsavel}}">
+                </div>
                 
             </div>
 
@@ -46,11 +44,6 @@
             </div>
 
             <div class="coluna">
-                <div class="campo">
-                    <label for="responsavel">Responsável:</label> <br>
-                    <input type="text" name="responsavel" value="{{$dados->responsavel}}">
-                </div>
-
                 <div class="campo">
                     <label for="observacao">Observação:</label> <br>
                     <input class="observacao" type="text" name="observacao" value="{{$dados->observacao}}">
