@@ -121,16 +121,23 @@ button.botao:hover {
 }
 
 /*AJUSTES ESPECIFICOS*/
-.formModalidade form {
+.formModalidade form { 
     width: 30rem;
     height: 15rem;
 }
 
-.cadastrarTime {
+
+.formCadastrarTime {
     height: 15rem;
     width: 45rem;
 }
 
 .cadastrarTime .competicao {
     padding-left: 20%;
+}
+
+.divEditarTime form{
+    width: 50rem;
+    height: 20rem;
+
 }

@@ -43,11 +43,23 @@ Route::get('/listarReservas', function () {
     return view('Reservas/listarReservas');
 }) -> name('listarReservas');
 
+Route::get('/listarReservaEscolhida', function () {
+    return view('Reservas/listarReservaEscolhida');
+}) -> name('listarReservaEscolhida');
+
+Route::get('/listarSolicitacoes', function () {
+    return view('Reservas/listarSolicitacaoReserva');
+}) -> name('listarSolicitacoes');
+
+Route::get('/listarSolicitacaoEscolhida', function () {
+    return view('Reservas/listarSolicitacaoEscolhida');
+}) -> name('listarSolicitacaoEscolhida');
+
 //////////////////////////////////////////////////////////
 /*Rotas para as páginas referentes aos Times*/
 //////////////////////////////////////////////////////////
 
-Route::get('/Cadastrartime', function () {
+Route::get('/CadastrarTime', function () {
     return view('Times/cadastrarTime');
 }) -> name('novoTime');
 
@@ -65,8 +77,8 @@ Route::get ('/treino_amistosos', [App\Http\Controllers\controllerTreinoAmistoso:
 ////////////////////////////////////////////////
 /*Rotas do controller da tabela de Modalidades*/
 ////////////////////////////////////////////////
-Route::get ('/modalidades', [App\Http\Controllers\controllerModalidades::class, 'index']) ->name('indexModalidade'); // Rota para exibir
-Route::post('/modalidades', [App\Http\Controllers\controllerModalidades::class, 'store'])->name('cadastrarModalidade'); // Rota para cadastrar
+Route::get ('/modalidades/ListarModalidades', [App\Http\Controllers\controllerModalidades::class, 'index']) ->name('indexModalidade'); // Rota para exibir
+Route::post('/modalidades/cadastrarModalidade', [App\Http\Controllers\controllerModalidades::class, 'store'])->name('cadastrarModalidade'); // Rota para cadastrar
 Route::post('/modalidades/atualizar/{idModalidade}', [App\Http\Controllers\controllerModalidades::class, 'update']); // Rota para editar
 Route::get('/modalidades/editar/{idModalidade}', [App\Http\Controllers\controllerModalidades::class, 'edit']); // Rota que manda o dado a ser editado para o formulário
 Route::get('/modalidades/apagar/{idModalidade}', [App\Http\Controllers\controllerModalidades::class, 'destroy']); // Rota para apagar
@@ -74,7 +86,12 @@ Route::get('/modalidades/apagar/{idModalidade}', [App\Http\Controllers\controlle
 /////////////////////////////////////////////
 /*Rotas do controller da tabela de Reservas*/
 /////////////////////////////////////////////
-Route::get ('/reservas', [App\Http\Controllers\controllerReservas::class, 'index']) ->name('indexReserva'); // Rota para exibir
+Route::get ('/reservas/listarReservas', [App\Http\Controllers\controllerReservas::class, 'index']) ->name('indexReserva'); // Rota para exibir as reservas
+Route::get ('/reservas/selecionadoReserva/{idReserva}', [App\Http\Controllers\controllerReservas::class, 'enviaReservaEscolhido']); // Rota que envia a reserva escolhida para ser vizualizado
+Route::get ('/reservas/listarSolicitacaoReserva', [App\Http\Controllers\controllerReservas::class, 'indexSolicitacao']) ->name('indexSolicitacao'); // Rota para exibir as solicitações
+Route::get ('/reservas/selecionadoSolicitacao/{idSolicitacaoReserva}', [App\Http\Controllers\controllerReservas::class, 'enviaSolicitacaoEscolhido']);// // Rota que envia a solicitação escolhida para ser vizualizado
+Route::get('/reservas/apagar/{idSolicitacaoReserva}', [App\Http\Controllers\controllerReservas::class, 'destroy']); // Rota que apaga uma solicitação de reserva
+Route::get('/reservas/cadastrarReserva/{idSolicitacaoReserva}', [App\Http\Controllers\controllerReservas::class, 'store']); // Quando a solicitação for aceita, a reserva será criada
 
 ////////////////////////////////////////////////
 /*Rotas do controller da tabela de Times*/

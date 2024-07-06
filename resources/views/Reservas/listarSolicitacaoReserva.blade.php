@@ -6,10 +6,12 @@
 @section('content')
     <div class="fundo">
         <table>
-            <caption>Modalidades</caption>
+            <caption>Solicitações</caption>
             <thead>
                 <tr class="amarelo">
-                    <th>Nome</th>
+                    <th>Dia</th>
+                    <th>Horário</th>
+                    <th>Local</th>
                     <th>Opções</th>
                 </tr>
             </thead>
@@ -24,12 +26,11 @@
                             $aux = true;
                         }
                     ?>
-                        <tr class="{{$classe}} modalidade">
-                            <td>{{$item->nome}}</td>
-                            <td>
-                                <a href="../modalidades/editar/{{$item->idModalidade}}">Editar</a>
-                                <a href="../modalidades/apagar/{{$item->idModalidade}}" onclick="return confirm('Deseja apagar a modalidade {{$item->nome}} ?')">Excluir</a>
-                            </td>
+                        <tr class="{{$classe}}">
+                            <td>{{$item->dia}}</td>
+                            <td>{{$item->horarioInicio}} - {{$item->horarioFim}}</td>
+                            <td>{{$item->local}}</td>
+                            <td><a href="../reservas/selecionadoSolicitacao/{{$item->idSolicitacaoReserva}}">Ver</a></td>
                         </tr>
                 @endforeach
             </tbody>

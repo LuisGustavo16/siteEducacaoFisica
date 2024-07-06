@@ -63,7 +63,10 @@ class controllerTimes extends Controller
     /*Envia os dados para serem editados*/
     public function edit(string $idTime) {
         $dados = Time::find($idTime);
-        return view('Times/editarTime', compact('dados'));
+        $modalidades = Modalidade::all();
+        $nomeModalidade = Modalidade::find($dados->idModalidade);
+        if (isset($dados))
+            return view('Times/editarTime', compact('dados', 'modalidades', 'nomeModalidade'));
     }
 
     /*Apaga um aluno de um time*/

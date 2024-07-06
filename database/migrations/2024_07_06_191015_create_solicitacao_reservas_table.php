@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reservas', function (Blueprint $table) {
-            $table->bigIncrements('idReserva');
+        Schema::create('solicitacao_reservas', function (Blueprint $table) {
+            $table->bigIncrements('idSolicitacaoReserva');
             $table->unsignedBigInteger('idAluno');
             $table->date('dia');
             $table->string('local');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::table('reservas', function(Blueprint $table) {
+        Schema::table('solicitacao_reservas', function(Blueprint $table) {
             $table->foreign('idAluno')->references('idAluno')->on('alunos');
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reservas');
+        Schema::dropIfExists('solicitacao_reservas');
     }
 };

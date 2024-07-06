@@ -29,7 +29,7 @@
             <div class="subopcoes dois">
                 <div class="laranja"></div>
                 <a class="titulo" href="{{route("indexReserva")}}"><h3>Ver reservas</h3></a>
-                <h3>Solicitações de reservas</h3>
+                <a class="titulo" href="{{route("indexSolicitacao")}}"><h3>Ver solicitações de reservas</h3></a>
             </div>
 
             <div class="subopcoes tres">

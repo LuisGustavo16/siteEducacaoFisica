@@ -95,6 +95,7 @@ div.subopcoes.um {
     margin-left: 3rem;
     border: 2px solid black;
     border-top: 0;
+    left: 0%;
 }
 
 div.subopcoes.dois {
@@ -106,7 +107,7 @@ div.subopcoes.dois {
     margin-left: 3rem;
     border: 2px solid black;
     border-top: 0;
-    left: 25rem;
+    left: 30%;
 }
 
 div.subopcoes.tres {
@@ -118,7 +119,7 @@ div.subopcoes.tres {
     margin-left: 3rem;
     border: 2px solid black;
     border-top: 0;
-    left: 46rem;
+    left: 55%;
 }
 
 div.subopcoes.quatro {
@@ -130,7 +131,7 @@ div.subopcoes.quatro {
     margin-left: 3rem;
     border: 2px solid black;
     border-top: 0;
-    left: 65rem;
+    left: 75%;
 }
 
 div.laranja {

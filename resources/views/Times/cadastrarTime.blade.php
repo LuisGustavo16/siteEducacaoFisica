@@ -1,7 +1,7 @@
 @extends ('cabecalho')
 @section('content')
 <div class="fundo">
-    <form class="cadastrarTime" action="{{route("cadastrarTime")}}" method="POST">
+    <form class="formCadastrarTime" action="{{route("cadastrarTime")}}" method="POST">
         @csrf
         <div class="coluna">
             <div class="campo">

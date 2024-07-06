@@ -6,11 +6,13 @@
 @section('content')
     <div class="fundo">
         <table>
-            <caption>Quadra</caption>
+            <caption>Reservas</caption>
             <thead>
                 <tr class="amarelo">
                     <th>Dia</th>
+                    <th>Horário</th>
                     <th>Local</th>
+                    <th>Opções</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,7 +28,9 @@
                     ?>
                         <tr class="{{$classe}}">
                             <td>{{$item->dia}}</td>
+                            <td>{{$item->horarioInicio}} - {{$item->horarioFim}}</td>
                             <td>{{$item->local}}</td>
+                            <td><a href="../reservas/selecionadoReserva/{{$item->idReserva}}">Ver</a></td>
                         </tr>
                 @endforeach
             </tbody>

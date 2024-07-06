@@ -69,8 +69,10 @@ class controllerTreinoAmistoso extends Controller
     /*Envia os dados para serem editados*/
     public function edit(string $idTreino) {
         $dados = TreinoAmistoso::find($idTreino);
+        $modalidades = Modalidade::all();
+        $nomeModalidade = Modalidade::find($dados->idModalidade);
         if (isset($dados))
-            return view('TreinosAmistosos/editarTreino', compact('dados'));
+            return view('TreinosAmistosos/editarTreino', compact('dados', 'modalidades', 'nomeModalidade'));
     }
 
     public function enviaModalidade() {

@@ -5,8 +5,13 @@
     --yellow: #FFDF2B;
     --orange: #FFC24B;
     --yellowSecondary: #FFF1A8;
+    --bottonAccept: #A2F294;
+    --bottonAcceptSecondary: #4F9552;
+    --bottonRecuse: #F87D7D;
+    --bottonRecuseSecondary: #AC3C3C;
 }
 
+/*Configurações Gerais*/
 table {
     border-collapse: collapse;
     margin-top: 3rem;
@@ -51,6 +56,7 @@ td {
     font-size: 1.6rem;
 }
 
+/*Menu zebrado*/
 .amarelo {
     background-color: var(--yellowSecondary);
     padding: 0.5rem;
@@ -60,22 +66,132 @@ td {
     padding: 0.5rem;
 }
 
+/*Centraliza a Div que contêm o "Adicionar Alunos" na pagina de Times*/
 .centralizarDiv {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.escolhido th {
-    font-size: 1.7rem;
-    padding-right: 30px;
+/*CSS da pagina ListarTreinoEscolhido*/
+.divListar {
+    width: 80rem;
+    height: 25rem;
+    display:grid;
+    grid-template-columns: repeat(4, 12rem);
+    grid-template-rows: repeat(3, 8rem);
+    column-gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    border-radius: 2rem;
+    border-color: black;
+    border: solid 0.15rem;
+    box-shadow: 0.1rem 0.1rem 1rem black;
 }
 
-.escolhido td {
-    font-size: 1.4rem;
-    padding-right: 30px;
+.divListar h1{
+    font-size: 1.1rem;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    text-align: left;
+    
 }
 
-.listarTreinos {
-    width: 65rem;
+.divListar h2{
+    font-size: 1rem;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    text-align: left;
+    font-weight: 400;
+    margin-left: 0.5rem;
+}
+
+.divListar .observacao h2{
+    width: 18rem;
+    max-width: 15rem;
+    word-wrap:break-word;
+    align-items: center;
+    justify-content: center;
+}
+
+.divListar .observacao{
+    padding-top: 7rem;
+}
+
+.campoListarTreinoEscolhido {
+    width: 10rem;
+    display: flex;
+}
+
+.centralizarDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*CSS da página ListarSolicitacaoEscolhida*/
+.solicitacao{
+    width: 60rem;
+    grid-template-columns: repeat(3, 12rem);
+    grid-template-rows: repeat(3, 8rem);
+}
+
+.solicitacao h2{
+    width: 10rem;
+    max-width: 10rem;
+    word-wrap:break-word;
+    align-items: center;
+    justify-content: center;
+}
+
+.centralizarBotoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.centralizarBotoes .aceitar {
+    margin-right: 2rem;
+    background-color: var(--bottonAccept);
+    height: 3rem;
+    width: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+    color: var(--bottonAcceptSecondary);
+    font-weight: 800;
+    border-radius: 3rem;
+}
+
+.centralizarBotoes .aceitar:hover {
+    color: var(--bottonAccept);
+    background-color: var(--bottonAcceptSecondary);
+    box-shadow: 0.1rem 0.1rem 1rem black;
+}
+
+.centralizarBotoes .recusar {
+    margin-left: 2rem;
+    background-color: var(--bottonRecuse);
+    height: 3rem;
+    width: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+    color: var(--bottonRecuseSecondary);
+    font-weight: 800;
+    border-radius: 3rem;
+}
+
+.centralizarBotoes .recusar:hover {
+    color: var(--bottonRecuse);
+    background-color: var(--bottonRecuseSecondary);
+    box-shadow: 0.1rem 0.1rem 1rem black;
 }
