@@ -1,0 +1,29 @@
+:root {
+    /*Cores do Site*/
+    --white: #E6E8F4;
+    --blue: #00198E;
+    --yellow: #FFDF2B;
+    --orange: #FFC24B;
+    --yellowSecondary: #FFF1A8;
+    --bottonAccept: #A2F294;
+    --bottonAcceptSecondary: #4F9552;
+    --bottonRecuse: #F87D7D;
+    --bottonRecuseSecondary: #AC3C3C;
+}
+
+.noticia {
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+.divNoticiasGerais {
+    height: 30rem;
+}
+
+.divNoticia {
+    margin-top: 2rem;
+    height: 5rem;
+    width: 65rem;
+    border: solid 0.1rem black;
+    background-color: white;
+}

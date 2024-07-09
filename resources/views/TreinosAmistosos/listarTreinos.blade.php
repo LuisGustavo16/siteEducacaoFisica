@@ -11,6 +11,7 @@ $classe = 'branco';
             <tr class="amarelo">
                 <th>Modalidade</th>
                 <th>Dia</th>
+                <th>Horário</th>
                 <th>Opções</th>
             </tr>
         </thead>
@@ -30,6 +31,7 @@ $classe = 'branco';
                                 @if ($modalidade->idModalidade == $item->idModalidade)
                                     <td>{{$modalidade->nome}} {{$item->genero}}</td>
                                     <td>{{$item->dia}}</td>
+                                    <td>{{$item->horario}}</td>
                                     <td>
                                         <a href="../treino_amistosos/selecionado/{{$item->idTreino}}/{{$modalidade->idModalidade}}">Ver</a>
                                         <a href="../treino_amistosos/editar/{{$item->idTreino}}">Editar</a>

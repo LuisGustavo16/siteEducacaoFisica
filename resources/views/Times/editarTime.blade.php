@@ -46,10 +46,11 @@ $generos = ["Masculino", "Feminino", "Misto"]
             <div class="campo">
                 <label for="publico">Competição:</label> <br>
                 <input type="text" name="competicao" value="{{$dados->competicao}}">
+                <button class="botao" type="submit">Salvar</button>
             </div>
         </div>
 
-        <button class="botao" type="submit">Salvar</button>
+        
     </form>
 
 

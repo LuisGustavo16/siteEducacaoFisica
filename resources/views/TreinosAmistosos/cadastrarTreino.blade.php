@@ -55,7 +55,7 @@
 
             <div class="campo">
                 <label for="observacao">Observação:</label><br>
-                <input class="observacao" type="text" name="observacao">
+                <textarea name="observacao"></textarea>
             </div>
 
         </div>

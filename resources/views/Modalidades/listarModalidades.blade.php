@@ -5,7 +5,7 @@
 @extends ('cabecalho')
 @section('content')
     <div class="fundo">
-        <table>
+        <table class="tableListarModalidades">
             <caption>Modalidades</caption>
             <thead>
                 <tr class="amarelo">

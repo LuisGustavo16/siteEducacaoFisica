@@ -3,11 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TreinoAmistosoController;
 
-
-Route::get('/', function () {
-    return view('index');
-}) -> name('inicio');
-
 //////////////////////////////////////////////////////////
 /*Rotas para as páginas referentes aos Treinos/Amistosos*/
 //////////////////////////////////////////////////////////
@@ -105,3 +100,7 @@ Route::get('/times/apagar/{idTime}', [App\Http\Controllers\controllerTimes::clas
 Route::get('/times/retirarAluno/{idAluno}/{idTime}', [App\Http\Controllers\controllerTimes::class, 'deleteAlunoTime']);
 Route::get ('/times/enviaModalidades', [App\Http\Controllers\controllerTimes::class, 'enviaModalidade'])->name('enviaModalidadeTimes'); // Rota que envia as modalidades para usar de opcao
 
+////////////////////////////////////////////////
+/*Rotas do controller da tabela de Noticias*/
+////////////////////////////////////////////////
+Route::get ('/noticias', [App\Http\Controllers\controllerNoticias::class, 'index']) ->name('inicio'); // Rota para exibir

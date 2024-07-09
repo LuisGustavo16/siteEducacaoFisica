@@ -24,14 +24,14 @@
         </div>
 
 
-        <div class="coluna competicao">
-            <div class="campo">
+        <div class="coluna">
+            <div class="campo competicao">
                 <label for="competicao">*Competição:</label><br>
                 <input type="text" name="competicao">
             </div>
         </div>
 
-        <button class="botao" type="submit">Enviar</button>
+        <button class="botaoCadastrarTime" type="submit">Enviar</button>
     </form>
 </div>
 @endsection

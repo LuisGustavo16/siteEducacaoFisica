@@ -16,7 +16,7 @@ table {
     border-collapse: collapse;
     margin-top: 3rem;
     height: 10rem;
-    width: 55rem;
+    width: 85rem;
     background-color: white;
     border: 1px solid black;
     margin-bottom:3rem;
@@ -31,8 +31,8 @@ caption {
     text-shadow: 0.1rem 0.1rem 0rem black;
     word-spacing: 0.5rem;
     border: 1px solid black;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 thead {
@@ -44,18 +44,18 @@ th {
     text-align: left;
     font-size: 2rem;
     padding: 0.5rem;
-    padding-left: 3rem;
+    padding-left: 2rem;
 }
 
 td {
-    padding-top: 30px;
-    padding-bottom: 30px;
     font-family: "Inter", sans-serif;
     text-align: left;
     padding-left: 30px;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+    height: 0.7rem;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
-
 /*Menu zebrado*/
 .amarelo {
     background-color: var(--yellowSecondary);
@@ -66,22 +66,21 @@ td {
     padding: 0.5rem;
 }
 
-/*Centraliza a Div que contêm o "Adicionar Alunos" na pagina de Times*/
+/*Centraliza uma Div*/
 .centralizarDiv {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/*CSS da pagina ListarTreinoEscolhido*/
+/*CSS das páginas que listam quando se clica em "Ver"*/
+
 .divListar {
-    width: 80rem;
-    height: 25rem;
     display:grid;
-    grid-template-columns: repeat(4, 12rem);
-    grid-template-rows: repeat(3, 8rem);
+    grid-template-rows: repeat(3, 4rem);
+    width: 55rem;
+    height: 25rem;
     column-gap: 1.5rem;
-    align-items: center;
     justify-content: center;
     background-color: white;
     margin-top: 5rem;
@@ -92,12 +91,24 @@ td {
     box-shadow: 0.1rem 0.1rem 1rem black;
 }
 
+.divTitulo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .divListar h1{
     font-size: 1.1rem;
+    height: 1rem;
     padding: 0;
     font-family: "Inter", sans-serif;
     text-align: left;
-    
+}
+
+.divTitulo h1 {
+    font-size: 1.3rem;
+    text-decoration:underline;
 }
 
 .divListar h2{
@@ -107,91 +118,4 @@ td {
     text-align: left;
     font-weight: 400;
     margin-left: 0.5rem;
-}
-
-.divListar .observacao h2{
-    width: 18rem;
-    max-width: 15rem;
-    word-wrap:break-word;
-    align-items: center;
-    justify-content: center;
-}
-
-.divListar .observacao{
-    padding-top: 7rem;
-}
-
-.campoListarTreinoEscolhido {
-    width: 10rem;
-    display: flex;
-}
-
-.centralizarDiv {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/*CSS da página ListarSolicitacaoEscolhida*/
-.solicitacao{
-    width: 60rem;
-    grid-template-columns: repeat(3, 12rem);
-    grid-template-rows: repeat(3, 8rem);
-}
-
-.solicitacao h2{
-    width: 10rem;
-    max-width: 10rem;
-    word-wrap:break-word;
-    align-items: center;
-    justify-content: center;
-}
-
-.centralizarBotoes {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 2rem;
-}
-
-.centralizarBotoes .aceitar {
-    margin-right: 2rem;
-    background-color: var(--bottonAccept);
-    height: 3rem;
-    width: 7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Inter", sans-serif;
-    text-decoration: none;
-    color: var(--bottonAcceptSecondary);
-    font-weight: 800;
-    border-radius: 3rem;
-}
-
-.centralizarBotoes .aceitar:hover {
-    color: var(--bottonAccept);
-    background-color: var(--bottonAcceptSecondary);
-    box-shadow: 0.1rem 0.1rem 1rem black;
-}
-
-.centralizarBotoes .recusar {
-    margin-left: 2rem;
-    background-color: var(--bottonRecuse);
-    height: 3rem;
-    width: 7rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Inter", sans-serif;
-    text-decoration: none;
-    color: var(--bottonRecuseSecondary);
-    font-weight: 800;
-    border-radius: 3rem;
-}
-
-.centralizarBotoes .recusar:hover {
-    color: var(--bottonRecuse);
-    background-color: var(--bottonRecuseSecondary);
-    box-shadow: 0.1rem 0.1rem 1rem black;
 }
