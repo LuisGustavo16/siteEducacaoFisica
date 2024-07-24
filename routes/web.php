@@ -53,10 +53,16 @@ Route::get('/listarSolicitacaoEscolhida', function () {
 //////////////////////////////////////////////////////////
 /*Rotas para as páginas referentes aos Times*/
 //////////////////////////////////////////////////////////
-
 Route::get('/CadastrarTime', function () {
     return view('Times/cadastrarTime');
 }) -> name('novoTime');
+
+//////////////////////////////////////////////////////////
+/*Rotas para as páginas referentes às Noticias*/
+//////////////////////////////////////////////////////////
+Route::get('/noticias/novaNoticia', function () {
+    return view('Noticias/cadastrarNoticia');
+}) -> name('novaNoticia');
 
 ////////////////////////////////////////////////////////
 /*Rotas do controller da tabela de Treinos e Amistosos*/
@@ -103,4 +109,9 @@ Route::get ('/times/enviaModalidades', [App\Http\Controllers\controllerTimes::cl
 ////////////////////////////////////////////////
 /*Rotas do controller da tabela de Noticias*/
 ////////////////////////////////////////////////
-Route::get ('/noticias', [App\Http\Controllers\controllerNoticias::class, 'index']) ->name('inicio'); // Rota para exibir
+Route::get ('/', [App\Http\Controllers\controllerNoticias::class, 'index']) ->name('inicio'); // Rota para exibir
+Route::post('/noticias/cadastrarNoticia', [App\Http\Controllers\controllerNoticias::class, 'store'])->name('cadastrarNoticia'); // Rota para cadastrar
+Route::get('/noticias/selecionado/{idNoticia}', [App\Http\Controllers\controllerNoticias::class, 'enviaNoticiaEscolhida']); // Rota que manda os dados de uma noticia para ela ser listada
+Route::post('/noticias/atualizar/{idNoticia}', [App\Http\Controllers\controllerNoticias::class, 'update']); // Rota para editar
+Route::get('/noticias/editar/{idNoticia}', [App\Http\Controllers\controllerNoticias::class, 'edit']); // Rota que manda o dado a ser editado para o formulário
+Route::get('/noticias/apagar/{idNoticia}', [App\Http\Controllers\controllerNoticias::class, 'destroy']); // Rota para apagar
