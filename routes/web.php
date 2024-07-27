@@ -134,3 +134,4 @@ Route::get ('/alunos/adicionarAluno/{idAluno}/{idTreino}', [App\Http\Controllers
 /*Rotas do controller do Cronograma*/
 //////////////////////////////////////////////////////////
 Route::get ('/cronograma', [App\Http\Controllers\controllerCronograma::class, 'index']) ->name('indexCronograma');
+Route::get ('/cronograma/gerarPDF', [App\Http\Controllers\controllerCronograma::class, 'gerarPDF']) ->name('gerarPDF');

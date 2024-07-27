@@ -22,10 +22,33 @@
     border: 0.1rem solid black;
 }
 
-.tableCronograma, table tr td {
+.tableCronograma, .tdCronograma {
     border: 0.1rem solid black;
+    background-color: var(--yellow);
  }
 
- .tableCronograma, thead tr th {
+ .tableCronograma, .thCronograma {
     border: 0.1rem solid black;
+    background-color: var(--yellow);
+ }
+
+ .tableCronograma, .tr {
+    height: 4rem;
+ }
+
+ .buttonGerarPDF {
+    font-family: "Inter", sans-serif;
+    position: absolute;
+    bottom: 1rem;
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 600;
+    height: 2rem;
+    width: 8rem;
+    text-align: center;
+ }
+
+ .buttonGerarPDF:hover {
+    color: var(--bottonAcceptSecondary);
+    font-weight: 900;
  }
