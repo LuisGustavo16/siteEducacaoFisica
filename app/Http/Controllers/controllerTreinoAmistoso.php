@@ -79,4 +79,5 @@ class controllerTreinoAmistoso extends Controller
         $modalidades = Modalidade::all();
         return view('Treinosamistosos/cadastrarTreino', compact('modalidades'));
     }
+
 }

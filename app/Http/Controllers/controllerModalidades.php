@@ -20,9 +20,9 @@ class controllerModalidades extends Controller
         if (isset($dados)) {
             $dados->nome = $request->input('nome');
             $dados->save();
-            return redirect()->route('inicio');
+            return redirect()->route('indexModalidade');
         }
-        return redirect()->route('inicio');
+        return redirect()->route('indexModalidade');
     }
 
     /*Cadastra um novo dado na tabela*/
@@ -30,7 +30,7 @@ class controllerModalidades extends Controller
         $dados = new Modalidade();
         $dados->nome = $request->input('nome');
         $dados->save();
-        return redirect()->route('inicio');
+        return redirect()->route('indexModalidade');
     }
 
     /*Apaga um dado da tabela*/

@@ -8,6 +8,7 @@ use App\Models\Time;
 use App\Models\AlunosTime;
 use App\Models\Aluno;
 use App\Models\Modalidade;
+use Illuminate\Support\Facades\DB;
 
 class controllerTimes extends Controller
 {
@@ -81,5 +82,17 @@ class controllerTimes extends Controller
     public function enviaModalidade() {
         $modalidades = Modalidade::all();
         return view('Times/cadastrarTime', compact('modalidades'));
+    }
+
+    /*Envia o id do time para o formulario de pesquisa de aluno, para que quando adicionar o aluno, adionce naquele time*/
+    public function enviaTime(string $idTime) {
+        return view('Times/pesquisarAluno', compact('idTime'));
+    }
+
+    /*Envia os dados dos alunos para poder adicionar no time*/
+    public function pesquisarAluno(Request $request, string $idTime) {
+        $pesquisa = $request->input('nomeAluno');
+        $alunos = DB::table('alunos')->select("nome", "idAluno", "turma", "curso")->where(DB::raw('lower(nome)'), 'like', '%' . strtolower($pesquisa) . '%') ->get();
+        return view('Times/mostrarPesquisaAluno', compact('alunos', 'idTime'));
     }
 }

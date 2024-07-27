@@ -57,6 +57,10 @@ Route::get('/CadastrarTime', function () {
     return view('Times/cadastrarTime');
 }) -> name('novoTime');
 
+Route::get('/formPesquisarAluno', function () {
+    return view('Times/pesquisarAluno');
+});
+
 //////////////////////////////////////////////////////////
 /*Rotas para as páginas referentes às Noticias*/
 //////////////////////////////////////////////////////////
@@ -104,7 +108,10 @@ Route::post('/times/atualizar/{idTime}', [App\Http\Controllers\controllerTimes::
 Route::get('/times/editar/{idTime}', [App\Http\Controllers\controllerTimes::class, 'edit']); // Rota que manda o dado a ser editado para o formulário
 Route::get('/times/apagar/{idTime}', [App\Http\Controllers\controllerTimes::class, 'destroy']); // Rota para apagar
 Route::get('/times/retirarAluno/{idAluno}/{idTime}', [App\Http\Controllers\controllerTimes::class, 'deleteAlunoTime']);
-Route::get ('/times/enviaModalidades', [App\Http\Controllers\controllerTimes::class, 'enviaModalidade'])->name('enviaModalidadeTimes'); // Rota que envia as modalidades para usar de opcao
+Route::get ('/times/enviaModalidades', [App\Http\Controllers\controllerTimes::class, 'enviaModalidade'])->name('enviaModalidadeTimes'); 
+Route::post ('/times/pesquisarAluno/{idTime}', [App\Http\Controllers\controllerTimes::class, 'pesquisarAluno'])->name('pesquisarAluno');
+Route::get ('/times/mandaTime/{idTime}', [App\Http\Controllers\controllerTimes::class, 'enviaTime']); 
+
 
 ////////////////////////////////////////////////
 /*Rotas do controller da tabela de Noticias*/
@@ -115,3 +122,15 @@ Route::get('/noticias/selecionado/{idNoticia}', [App\Http\Controllers\controller
 Route::post('/noticias/atualizar/{idNoticia}', [App\Http\Controllers\controllerNoticias::class, 'update']); // Rota para editar
 Route::get('/noticias/editar/{idNoticia}', [App\Http\Controllers\controllerNoticias::class, 'edit']); // Rota que manda o dado a ser editado para o formulário
 Route::get('/noticias/apagar/{idNoticia}', [App\Http\Controllers\controllerNoticias::class, 'destroy']); // Rota para apagar
+
+
+////////////////////////////////////////////////
+/*Rotas do controller da tabela de Alunos*/
+////////////////////////////////////////////////
+Route::get ('/alunos/adicionarAluno/{idAluno}/{idTreino}', [App\Http\Controllers\controllerAluno::class, 'adicionaAlunoTime']); // Rota para exibir
+
+
+//////////////////////////////////////////////////////////
+/*Rotas do controller do Cronograma*/
+//////////////////////////////////////////////////////////
+Route::get ('/cronograma', [App\Http\Controllers\controllerCronograma::class, 'index']) ->name('indexCronograma');

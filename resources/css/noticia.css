@@ -179,11 +179,11 @@
 
 .conteudoEscolhido {
     font-family: "Inter", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
     text-align: left;
     text-decoration: none;
-    max-width: 100rem;
+    max-width: 78rem;
     word-wrap:break-word;
 }
 
@@ -215,10 +215,12 @@ h6 {
     .divNoticia {
         height: 12rem;
         width: 42rem;
+        grid-template-rows: repeat(2, 10rem);
+        grid-template-columns: repeat(1, 41rem);
     }
 
     .conteudoNoticia {
-        max-width: 41rem;
+        max-width: 200%;
     }
 }
 
@@ -232,6 +234,7 @@ h6 {
     .divNoticia {
         height: 12rem;
         width: 32rem;
+        grid-template-rows: repeat(2, 10rem);
     }
 
     .conteudoNoticia {

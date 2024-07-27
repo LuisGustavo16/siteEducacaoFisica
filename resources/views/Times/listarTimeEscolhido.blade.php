@@ -24,7 +24,7 @@
         </table>
 
         <div class="centralizarDiv">
-            <a href="">
+            <a href="../../../times/mandaTime/{{$dados->idTime}}">
                 <h1>ADICIONAR ALUNO AO TIME</h1>
             </a>
         </div>
@@ -53,7 +53,7 @@
                     <tr class="{{$classe}}">
                         <td>{{$aluno->nome}}</td>
                         <td>{{$aluno->turma}} {{$aluno->curso}}</td>
-                        <td><a href="../../times/retirarAluno/{{$aluno->idAluno}}/{{$dados->idTime}}">Remover Aluno</a></td>
+                        <td><a href="../../../times/retirarAluno/{{$aluno->idAluno}}/{{$dados->idTime}}">Remover Aluno</a></td>
                     </tr>
                     @endif
                 @endforeach

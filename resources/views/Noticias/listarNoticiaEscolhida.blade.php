@@ -23,7 +23,9 @@ $diasDaSemana = [
     <div class="divNoticiaEscolhida">
         <h1 class="tituloEscolhido">{{$dados->titulo}}</h1>
         <h6>{{$diasDaSemana[$diaDaSemanaIngles]}}, {{$dataNova}}</h6>
-        <h2 class="conteudoEscolhido">{{$dados->noticia}}</h2>
+        @foreach(explode("\n", $dados->noticia) as $paragrafo)
+            <h2 class="conteudoEscolhido">{{ $paragrafo }}</h2>
+        @endforeach
     </div>
 </div>
 @endsection

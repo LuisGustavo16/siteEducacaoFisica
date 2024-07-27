@@ -1,0 +1,31 @@
+:root {
+    /*Cores do Site*/
+    --white: #E6E8F4;
+    --blue: #00198E;
+    --yellow: #FFDF2B;
+    --orange: #FFC24B;
+    --yellowSecondary: #FFF1A8;
+    --bottonAccept: #A2F294;
+    --bottonAcceptSecondary: #4F9552;
+    --bottonRecuse: #F87D7D;
+    --bottonRecuseSecondary: #AC3C3C;
+}
+
+.dataSemana {
+    font-family: "Inter", sans-serif;
+    color: black;
+    word-spacing: 20px;
+    text-shadow: 0 0 0 black;
+}
+
+.tableCronograma caption {
+    border: 0.1rem solid black;
+}
+
+.tableCronograma, table tr td {
+    border: 0.1rem solid black;
+ }
+
+ .tableCronograma, thead tr th {
+    border: 0.1rem solid black;
+ }

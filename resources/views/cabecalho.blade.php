@@ -54,7 +54,9 @@
                         <a class="titulo" href="{{route("indexTreino")}}">
                             <h4>Ver treinos e amistosos</h4>
                         </a>
-                        <h4>Cronograma</h4>
+                        <a class="titulo" href="{{route("indexCronograma")}}">
+                            <h4>Cronograma</h4>
+                        </a>
                     </div>
 
                     <div class="subopcoesHamburguer subopcaoDois">
@@ -98,7 +100,9 @@
             <a class="titulo" href="{{route("indexTreino")}}">
                 <h3>Ver treinos e amistosos</h3>
             </a>
-            <h3>Cronograma</h3>
+            <a class="titulo" href="{{route("indexCronograma")}}">
+                <h3>Cronograma</h3>
+            </a>
         </div>
 
         <div class="subopcoes dois">
