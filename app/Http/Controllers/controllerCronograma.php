@@ -100,8 +100,8 @@ class controllerCronograma extends Controller
         $dompdf->render();
 
         // Enviando o PDF para o navegador
-        $dompdf->stream();
+        return $dompdf->stream('treinos.pdf');
 
-        return redirect(route("inicio"));
+       
     }
 }

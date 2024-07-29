@@ -39,7 +39,7 @@
  .buttonGerarPDF {
     font-family: "Inter", sans-serif;
     position: absolute;
-    bottom: 1rem;
+    bottom: -5%;
     text-decoration: none;
     color: var(--blue);
     font-weight: 600;
@@ -49,6 +49,6 @@
  }
 
  .buttonGerarPDF:hover {
-    color: var(--bottonAcceptSecondary);
+    color: var(--bottonRecuseSecondary);
     font-weight: 900;
  }

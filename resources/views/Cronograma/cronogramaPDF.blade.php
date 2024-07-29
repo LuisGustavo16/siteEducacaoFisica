@@ -42,28 +42,34 @@ if (!function_exists('confereDia')) {
             --bottonRecuseSecondary: #AC3C3C;
         }
 
-        .dataSemana {
+        caption {
             font-family: "Inter", sans-serif;
             color: black;
             word-spacing: 20px;
             text-shadow: 0 0 0 black;
+            border: 0.1rem solid black;
+            border-bottom: 0;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            font-size: 2rem;
+            font-weight: 700;
         }
 
-        .tableCronograma,
-        .tdCronograma {
+        td {
+            font-family: "Inter", sans-serif;
             border: 0.1rem solid black;
             background-color: var(--yellow);
         }
 
-        .tableCronograma,
-        .thCronograma {
+        th {
+            font-family: "Inter", sans-serif;
             border: 0.1rem solid black;
             background-color: var(--yellow);
         }
 
-        .tableCronograma,
-        .tr {
+        tr {
             height: 4rem;
+            text-align: center;
         }
 
         table {
@@ -75,22 +81,27 @@ if (!function_exists('confereDia')) {
             border: 1px solid black;
             margin-bottom: 3rem;
         }
+
+        .fundo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 
 <body>
     <div class="fundo">
 
-        <table class="tabelaCronograma">
-            <caption class="dataSemana">{{$inicioSemana}} - {{$fimSemana}}</caption>
+        <table>
             <thead>
-                <th class="thCronograma">Data</th>
-                <th class="thCronograma">Horário</th>
-                <th class="thCronograma">Modalidade</th>
-                <th class="thCronograma">Gênero</th>
-                <th class="thCronograma">Público</th>
-                <th class="thCronograma">Local</th>
-                <th class="thCronograma">Responsável</th>
+                <th>Data</th>
+                <th>Horário</th>
+                <th>Modalidade</th>
+                <th>Gênero</th>
+                <th>Público</th>
+                <th>Local</th>
+                <th>Responsável</th>
             </thead>
             <tbody>
                 @foreach ($treinos as $treino)
@@ -99,16 +110,16 @@ if (!function_exists('confereDia')) {
                             <tr>
                                 @if ($aux == 1)
                                     <?php                $aux = confereDia($treino->dia, $treinos, $j)?>
-                                    <td class="tdCronograma" rowspan="{{confereDia($treino->dia, $treinos, $j)}}">{{$treino->dia}}</td>
+                                    <td rowspan="{{confereDia($treino->dia, $treinos, $j)}}">{{$treino->dia}}</td>
                                 @else
                                     <?php                $aux--; ?>
                                 @endif
-                                <td class="tdCronograma">{{$treino->horario}}</td>
-                                <td class="tdCronograma">{{$modalidade->nome}}</td>
-                                <td class="tdCronograma">{{$treino->genero}}</td>
-                                <td class="tdCronograma">{{$treino->publico}}</td>
-                                <td class="tdCronograma">{{$treino->local}}</td>
-                                <td class="tdCronograma">{{$treino->responsavel}}</td>
+                                <td>{{$treino->horario}}</td>
+                                <td>{{$modalidade->nome}}</td>
+                                <td>{{$treino->genero}}</td>
+                                <td>{{$treino->publico}}</td>
+                                <td>{{$treino->local}}</td>
+                                <td>{{$treino->responsavel}}</td>
                             </tr>
                             <?php            $j++; ?>
                         @endif
