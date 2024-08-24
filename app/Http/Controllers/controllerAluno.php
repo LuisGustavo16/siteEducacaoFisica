@@ -14,19 +14,14 @@ class controllerAluno extends Controller
 
     public function adicionaAlunoTime(string $idAluno, string $idTime)
     {
-        $verificador = AlunosTime::where('idAluno', $idAluno)->where('idTime', $idTime);
-        if (!isset($verificador)){
+        $verificador = AlunosTime::where('idAluno', $idAluno)->where('idTime', $idTime)->first();
+        if (!isset($verificador)) {
             $dados = new AlunosTime();
             $dados->idAluno = $idAluno;
             $dados->idTime = $idTime;
             $dados->save();
         }
-        return redirect()->route('indexTime');
-    }
-
-    public function mostrarAlunoEscolhido()
-    {
-        
+        return redirect()->route('verTime', ['idTime' => $idTime]);
     }
 
 }

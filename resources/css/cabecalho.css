@@ -98,6 +98,7 @@ div.subopcoes.um {
     border: 2px solid black;
     top: 15.4rem;
     left: 0%;
+    z-index: 1;
     border-top: 0;
 }
 
@@ -201,6 +202,47 @@ div.subopcoes.quatro:hover {
     display: block;
     cursor: pointer;
 }
+
+/*Notificações de Danger e Successs*/
+.notificacao {
+    position: absolute;
+    top: 15.5rem;
+    left: 0;
+}
+
+.success {
+    background-color: rgb(156, 220, 156);
+    font-size: 1.4rem;
+    height: 4rem;
+    width: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 2rem;
+    font-family: "Inter", sans-serif;
+    border: black solid 0.2rem;
+    border-top: 0;
+    font-style: italic;
+    font-weight: 700;
+    z-index: 0;
+}
+
+.danger {
+    background-color: rgb(234, 130, 130);
+    font-size: 1.4rem;
+    height: 4rem;
+    width: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-right-radius: 2rem;
+    font-family: "Inter", sans-serif;
+    border: black solid 0.2rem;
+    border-top: 0;
+    font-style: italic;
+    font-weight: 700;
+}
+
 
 /*Menu Hamburguer*/
 

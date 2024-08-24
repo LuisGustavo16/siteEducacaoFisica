@@ -49,7 +49,7 @@
                     <h4 class="opcaoQuatro">Configurações</h4>
 
                     <div class="subopcoesHamburguer subopcaoUm">
-                        <a class="titulo" href="{{route("enviaModalidadesCadastro")}}">
+                        <a class="titulo" href="{{route("formCadastroTreino")}}">
                             <h4>Cadastrar novo treino ou amistoso</h4>
                         </a>
                         <a class="titulo" href="{{route("indexTreino")}}">
@@ -95,7 +95,7 @@
 
         <div class="subopcoes um">
             <div class="laranja"></div>
-            <a class="titulo" href="{{route("enviaModalidadesCadastro")}}">
+            <a class="titulo" href="{{route("formCadastroTreino")}}">
                 <h3>Cadastrar novo treino ou amistoso</h3>
             </a>
             <a class="titulo" href="{{route("indexTreino")}}">

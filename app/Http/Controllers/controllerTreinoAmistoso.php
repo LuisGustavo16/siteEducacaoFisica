@@ -12,14 +12,23 @@ class controllerTreinoAmistoso extends Controller
     /*Envia todos os dados para serem listados*/
     public function index() {
         $dados = TreinoAmistoso::all();
+        foreach ($dados as $item) {
+            $modalidade = Modalidade::find($item->idModalidade);
+            $item->nomeModalidade = $modalidade->nome;
+        }
+        return view('TreinosAmistosos/listarTreinos', compact('dados'));
+    }
+
+    /**/
+    public function create() {
         $modalidades = Modalidade::all();
-        return view('TreinosAmistosos/listarTreinos', compact('dados', 'modalidades'));
+        return view('Treinosamistosos/cadastrarTreino', compact('modalidades'));
     }
 
     /*Ao clicar em um treino, os dados dele serão enviados*/
-    public function enviaTreinoEscolhido(string $idTreino, string $idModalidade) {
+    public function verTreino(string $idTreino) {
         $dados = TreinoAmistoso::find($idTreino);
-        $modalidade = Modalidade::find($idModalidade);
+        $modalidade = Modalidade::find($dados->idModalidade);
         if (isset($dados))
             return view('TreinosAmistosos/listarTreinoEscolhido', compact('dados', 'modalidade'));
     }
@@ -37,9 +46,9 @@ class controllerTreinoAmistoso extends Controller
             $dados->responsavel = $request->input('responsavel');
             $dados->observacao = $request->input('observacao');
             $dados->save();
-            return redirect()->route('inicio');
+            return redirect()->route('indexTreino');
         }
-        return redirect()->route('inicio');
+        return redirect()->route('indexTreino');
     }
 
     /*Cadastra um novo dado na tabela*/
@@ -53,8 +62,10 @@ class controllerTreinoAmistoso extends Controller
         $dados->local = $request->input('local');
         $dados->responsavel = $request->input('responsavel');
         $dados->observacao = $request->input('observacao');
-        $dados->save();
-        return redirect()->route('inicio');
+        if ($dados->save())
+            return redirect()->route('indexTreino')->with('success', 'Treino cadastrado com sucesso!!');
+        else    
+            return redirect()->route('indexTreino')->with('danger', 'Erro ao tentar cadastrar um novo treino...');
     }
 
     /*Apaga um dado da tabela*/
@@ -73,11 +84,6 @@ class controllerTreinoAmistoso extends Controller
         $nomeModalidade = Modalidade::find($dados->idModalidade);
         if (isset($dados))
             return view('TreinosAmistosos/editarTreino', compact('dados', 'modalidades', 'nomeModalidade'));
-    }
-
-    public function enviaModalidade() {
-        $modalidades = Modalidade::all();
-        return view('Treinosamistosos/cadastrarTreino', compact('modalidades'));
     }
 
 }

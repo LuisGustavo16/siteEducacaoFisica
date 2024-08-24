@@ -15,16 +15,19 @@ class controllerTimes extends Controller
     /*Envia todos os dados para serem listados*/
     public function index() {
         $dados = Time::all();
-        $modalidades = Modalidade::all();
-        return view('Times/listarTimes', compact('dados', 'modalidades'));
+        foreach ($dados as $item) {
+            $modalidade = Modalidade::find($item->idModalidade);
+            $item->nomeModalidade = $modalidade->nome;
+        }
+        return view('Times/listarTimes', compact('dados'));
     }
 
     /*Ao clicar em um treino, os dados dele serão enviados*/
-    public function enviaTimeEscolhido(string $idTime, string $idModalidade) {
+    public function verTime(string $idTime) {
         $dados = Time::find($idTime);
         $alunosTimes = AlunosTime::all();
         $alunos = Aluno::all();
-        $modalidade = Modalidade::find($idModalidade);
+        $modalidade = Modalidade::find($dados->idModalidade);
         if (isset($dados))
             return view('Times/listarTimeEscolhido', compact('dados', 'modalidade', 'alunosTimes', 'alunos'));
     }
@@ -37,9 +40,9 @@ class controllerTimes extends Controller
             $dados->genero = $request->input('genero');
             $dados->competicao = $request->input('competicao');
             $dados->save();
-            return redirect()->route('inicio');
+            return redirect()->route('indexTime');
         }
-        return redirect()->route('inicio');
+        return redirect()->route('indexTime');
     }
 
     /*Cadastra um novo dado na tabela*/
@@ -49,7 +52,7 @@ class controllerTimes extends Controller
         $dados->genero = $request->input('genero');
         $dados->competicao = $request->input('competicao');
         $dados->save();
-        return redirect()->route('inicio');
+        return redirect()->route('indexTime');
     }
 
     /*Apaga um dado da tabela*/
@@ -75,7 +78,7 @@ class controllerTimes extends Controller
         $alunoTime = AlunosTime::where('idAluno', $idAluno)->where('idTime', $idTime);
         if (isset($alunoTime)) {
             $alunoTime->delete();
-            return redirect()->route('indexTime');
+            return redirect()->route('verTime', ['idTime' => $idTime]);
         }
     }
 

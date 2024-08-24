@@ -26,18 +26,14 @@ $classe = 'branco';
                 }
                             ?>
                         <tr class="{{$classe}}">
-                            @foreach ($modalidades as $modalidade)
-                                @if ($modalidade->idModalidade == $item->idModalidade)
-                                    <td>{{$modalidade->nome}} {{$item->genero}}</td>
+                                    <td>{{$item->nomeModalidade}} {{$item->genero}}</td>
                                     <td>{{$item->competicao}}</td>
                                     <td>
-                                        <a href="../times/selecionado/{{$item->idTime}}/{{$item->idModalidade}}">Ver</a>
+                                        <a href="../times/verTime/{{$item->idTime}}">Ver</a>
                                         <a href="../times/editar/{{$item->idTime}}">Editar</a>
                                         <a href="../times/apagar/{{$item->idTime}}"
                                             onclick="return confirm('Deseja apagar o time do {{$item->competicao}} ?')">Excluir</a>
                                     </td>
-                                @endif
-                            @endforeach
                         </tr>
 
             @endforeach
