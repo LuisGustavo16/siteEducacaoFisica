@@ -37,6 +37,6 @@ if (!function_exists('formaTextoNoticia')) {
             </div>
         @endforeach
     </div>
-    <a href="{{route("novaNoticia")}}" class="noticiasAdd"></a>
+    <a href="{{route("novaNoticia")}}" class="noticiasAdd">+</a>
 </div>
 @endsection

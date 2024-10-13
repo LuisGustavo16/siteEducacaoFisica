@@ -12,6 +12,7 @@
 }
 
 .solicitacao{
+    padding-top: 1rem;
     width: 60rem;
     grid-template-columns: repeat(3, 12rem);
     grid-template-rows: repeat(3, 8rem);
@@ -19,7 +20,7 @@
 
 .solicitacao h2{
     width: 10rem;
-    max-width: 10rem;
+    max-width: 15rem;
     word-wrap:break-word;
     align-items: center;
     justify-content: center;
@@ -72,4 +73,29 @@
     color: var(--bottonRecuse);
     background-color: var(--bottonRecuseSecondary);
     box-shadow: 0.1rem 0.1rem 1rem black;
+}
+
+.centralizarBotoes .cancelar {
+    margin-left: 2rem;
+    background-color: var(--bottonRecuse);
+    height: 3rem;
+    width: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Inter", sans-serif;
+    text-decoration: none;
+    color: var(--bottonRecuseSecondary);
+    font-weight: 800;
+    border-radius: 3rem;
+}
+
+.centralizarBotoes .cancelar:hover {
+    color: var(--bottonRecuse);
+    background-color: var(--bottonRecuseSecondary);
+    box-shadow: 0.1rem 0.1rem 1rem black;
+}
+
+.pessoas {
+    width: 20rem;
 }

@@ -24,9 +24,7 @@
         </table>
 
         <div class="centralizarDiv">
-            <a href="../../../times/mandaTime/{{$dados->idTime}}">
-                <h1>ADICIONAR ALUNO AO TIME</h1>
-            </a>
+            <a class="botaoAddAluno" href="../../../times/formPesquisarAluno/{{$dados->idTime}}">Adicionar aluno ao time</a>
         </div>
 
         <table>

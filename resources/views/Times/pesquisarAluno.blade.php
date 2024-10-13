@@ -1,11 +1,11 @@
 @extends ('cabecalho')
 @section('content')
 <div class="fundo">
-    <form class="" action="/times/pesquisarAluno/{{$idTime}}" method="POST">
+    <form class="formPesquisarAluno" action="/times/mostrarAlunosPesquisa/{{$idTime}}" method="POST">
         @csrf
         <input  type="text" name="nomeAluno">
 
-        <button class="botaoCadastrarTime" type="submit">Enviar</button>
+        <button class="botaoPesquisarAluno" type="submit">Enviar</button>
     </form>
 </div>
 @endsection

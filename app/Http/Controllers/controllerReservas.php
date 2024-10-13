@@ -49,7 +49,7 @@ class controllerReservas extends Controller
         $dados->finalidade = $solicitacao->finalidade;
         $dados->save();
         $solicitacao->delete();
-        return redirect()->route('inicio');
+        return redirect()->route('indexSolicitacao');
     }
 
     public function destroy(string $idSolicitacao) {
@@ -57,6 +57,14 @@ class controllerReservas extends Controller
         if (isset($dados)) {
             $dados->delete();
             return redirect()->route('indexSolicitacao');
+        }
+    }
+
+    public function cancelarReserva(string $idReerva) {
+        $dados = Reserva::find($idReerva);
+        if (isset($dados)) {
+            $dados->delete();
+            return redirect()->route('indexReserva');
         }
     }
 }

@@ -98,6 +98,10 @@
     width: 3.2rem;
     border-radius: 2rem;
     background-color: var(--blue);
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
 }
 
 .noticiasAdd h1 {

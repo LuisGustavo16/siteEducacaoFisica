@@ -73,7 +73,7 @@
         <div class="coluna">
             <div class="campo">
                 <label for="observacao">Observação:</label> <br>
-                <input class="observacao" type="text" name="observacao" value="{{$dados->observacao}}">
+                <textarea value="{{$dados->observacao}}" name="observacao"></textarea>
             </div>
 
         </div>

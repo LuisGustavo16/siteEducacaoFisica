@@ -95,7 +95,8 @@ Route::get ('/reservas/listarReservas', [App\Http\Controllers\controllerReservas
 Route::get ('/reservas/selecionadoReserva/{idReserva}', [App\Http\Controllers\controllerReservas::class, 'enviaReservaEscolhido']); // Rota que envia a reserva escolhida para ser vizualizado
 Route::get ('/reservas/listarSolicitacaoReserva', [App\Http\Controllers\controllerReservas::class, 'indexSolicitacao']) ->name('indexSolicitacao'); // Rota para exibir as solicitações
 Route::get ('/reservas/selecionadoSolicitacao/{idSolicitacaoReserva}', [App\Http\Controllers\controllerReservas::class, 'enviaSolicitacaoEscolhido']);// // Rota que envia a solicitação escolhida para ser vizualizado
-Route::get('/reservas/apagar/{idSolicitacaoReserva}', [App\Http\Controllers\controllerReservas::class, 'destroy']); // Rota que apaga uma solicitação de reserva
+Route::get('/reservas/cancelarReserva/{idReserva}', [App\Http\Controllers\controllerReservas::class, 'cancelarReserva']); // Rota que apaga uma solicitação de reserva
+Route::get('/reservas/apagar/{idReserva}', [App\Http\Controllers\controllerReservas::class, 'destroy']); // Rota que apaga uma solicitação de reserva
 Route::get('/reservas/cadastrarReserva/{idSolicitacaoReserva}', [App\Http\Controllers\controllerReservas::class, 'store']); // Quando a solicitação for aceita, a reserva será criada
 
 ////////////////////////////////////////////////
@@ -109,8 +110,8 @@ Route::get('/times/editar/{idTime}', [App\Http\Controllers\controllerTimes::clas
 Route::get('/times/apagar/{idTime}', [App\Http\Controllers\controllerTimes::class, 'destroy']); // Rota para apagar
 Route::get('/times/retirarAluno/{idAluno}/{idTime}', [App\Http\Controllers\controllerTimes::class, 'deleteAlunoTime']);
 Route::get ('/times/enviaModalidades', [App\Http\Controllers\controllerTimes::class, 'enviaModalidade'])->name('enviaModalidadeTimes'); 
-Route::post ('/times/pesquisarAluno/{idTime}', [App\Http\Controllers\controllerTimes::class, 'pesquisarAluno'])->name('pesquisarAluno');
-Route::get ('/times/mandaTime/{idTime}', [App\Http\Controllers\controllerTimes::class, 'enviaTime']); 
+Route::post ('/times/mostrarAlunosPesquisa/{idTime}', [App\Http\Controllers\controllerTimes::class, 'mostrarAlunosPesquisa'])->name('pesquisarAluno');
+Route::get ('/times/formPesquisarAluno/{idTime}', [App\Http\Controllers\controllerTimes::class, 'pesquisarAluno']); 
 
 
 ////////////////////////////////////////////////
